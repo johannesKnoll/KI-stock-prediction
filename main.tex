@@ -16,9 +16,9 @@
 \input{content/00_LaTeX/miscellaneous/grammar}
 
 % -- Allgemeine Informationen zur Arbeit
-\newcommand{\titel}{Beispieltitel, welcher am Besten über zwei Zeilen verläuft}
-\newcommand{\titelheader}{Titel welcher im Header auftaucht}
-\newcommand{\arbeit}{Projektarbeit 1 (T1\_1000)}
+\newcommand{\titel}{Vorhersage von Aktienkursen mithilfe von Machine Learning}
+\newcommand{\titelheader}{Vorhersage von Aktienkursen durch ML}
+\newcommand{\arbeit}{Praktische Data Science-Studie}
 
 % -- Persönliche Angaben und DHBW
 \newcommand{\vorname}{Johannes}
@@ -29,13 +29,13 @@
 \newcommand{\studienjahr}{2019}										% Datum in dem Format yyyy angeben
 \newcommand{\abschluss}{Bachelor of Science}
 \newcommand{\dhbwStandort}{Mannheim}					
-\newcommand{\betreuerDhbw}{DH-Vorname DH-Nachname}
+\newcommand{\betreuerDhbw}{Prof. Dr. Tobias Günther}
 
 % -- Angaben zum Zeitraum und der Abgabe
-\newcommand{\abgabeOrt}{Musterort}						
-\newcommand{\abgabeDatum}{2020-09-08} 								% Datum in dem Format yyyy-mm-dd angeben
-\newcommand{\bearbeitungszeitraumBeginn}{2020-03-24} 				% Datum in dem Format yyyy-mm-dd angeben
-\newcommand{\bearbeitungszeitraumEnde}{2020-09-08} 					% Datum in dem Format yyyy-mm-dd angeben
+\newcommand{\abgabeOrt}{Mannheim}						
+\newcommand{\abgabeDatum}{2022-04-11} 								% Datum in dem Format yyyy-mm-dd angeben
+\newcommand{\bearbeitungszeitraumBeginn}{2022-03-22} 				% Datum in dem Format yyyy-mm-dd angeben
+\newcommand{\bearbeitungszeitraumEnde}{2022-04-08} 					% Datum in dem Format yyyy-mm-dd angeben
 
 % -- Angaben zu der Ausbildungsfirma
 \newcommand{\firmaName}{SAP SE}
@@ -82,11 +82,11 @@
     \include{content/02_declaration/declaration}
     
     % -- Einbinden des Sperrvermerks
-    \include{content/03_confidentialityStatement/confidentialityStatement}
+    % \include{content/03_confidentialityStatement/confidentialityStatement}
     
     % -- Einbinden des Abstracts
-    \include{content/04_abstract/abstract-de}
-    \include{content/04_abstract/abstract-en}
+    % \include{content/04_abstract/abstract-de}
+    % \include{content/04_abstract/abstract-en}
     
     % -- Inhaltsverzeichnis
     \singlespacing													% Einfacher Zeilenabstand
@@ -122,11 +122,11 @@
 
 	\listoffigures                         							% Erzeugen des Abbildungsverzeichnisses 
 	\listoftables                          							% Erzeugen des Tabellenverzeichnisses
-    \lstlistoflistings                     							% Erzeugen des Listenverzeichnisses
+    % \lstlistoflistings                     							% Erzeugen des Listenverzeichnisses
     \setcounter{savepage}{\value{page}}								% Römische Seitenzahl wird für später gespeichert
 
 	% -- Liste der zu erledigenden Punkte. Wichtig: Diese Liste muss vor der endgültigen Abgabe auskommentiert werden!
-	\listoftodos
+	% \listoftodos
     
     % -- Einbinden von den verschiedenen Kapiteln
     \cleardoublepage												% Beendet eine Seite
@@ -138,16 +138,23 @@
     \onehalfspacing													% Eineinhalbfacher Zeilenabstand
 	\sffamily                               					 	% Serifenlose Schrift verwenden. 
 	   
-	\ifthenelse{\not\boolean{abgabeVersion}\and\boolean{anleitungDrucken}}							% Beispielkapitel werden eingebunden
-	{
-		\include{content/00_LaTeX/exampleProject/01_einleitung}
-		\include{content/00_LaTeX/exampleProject/02_abbildungen}
-		\include{content/00_LaTeX/exampleProject/03_formatText}
-		\include{content/00_LaTeX/exampleProject/04_mathematische-formeln}
-		\include{content/00_LaTeX/exampleProject/05_quellcode}
-		\include{content/00_LaTeX/exampleProject/06_literaturHinweis}
-	}
-	{}
+							% Beispielkapitel werden eingebunden
+		\include{content/00_LaTeX/exampleProject/01_Einleitung}
+		% \include{content/00_LaTeX/exampleProject/CRISP}
+		\include{content/00_LaTeX/exampleProject/Geschaeftsverstaendnis}
+		\include{content/00_LaTeX/exampleProject/Datenverstaendnis}
+		\include{content/00_LaTeX/exampleProject/Datenvorbereitung}
+		\include{content/00_LaTeX/exampleProject/Modellierung}
+		\include{content/00_LaTeX/exampleProject/Evaluierung}
+		\include{content/00_LaTeX/exampleProject/Fazit}
+		% \include{content/06_chapter/test/01_Einleitung.tex}
+		% \include{content/06_chapter/CRISP.tex}
+		% \include{content/06_chapter/Geschaeftsverstaendnis.tex}
+		% \include{content/06_chapter/Datenverstaendnis.tex}
+		% \include{content/06_chapter/Datenvorbreitung.tex}
+		% \include{content/06_chapter/Modellierung.tex}
+		% \include{content/06_chapter/Evaluierung.tex}
+	
 	
 	% -- Einbinden des Literaturverzeichnisses 
 	\cleardoublepage												% Beendet eine Seite

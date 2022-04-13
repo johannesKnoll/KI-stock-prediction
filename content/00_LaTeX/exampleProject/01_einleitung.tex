@@ -1,49 +1,10 @@
 \chapter{Einleitung}
+Die folgende Arbeit thematisiert die Anwendung eines \ac{ML}-Algorithmus, um einen Aktienkurs vorherzusagen. Unter der Verwendung eines geeigneten Datensatzes wird ein Modell entwickelt, welches den Aktienkurs eines Unternehmens für einen bestimmten Zeitraum vorhersagt.
 
-\section*{Information bezüglich des Inhaltsverzeichnisses}
-Nachtrag zum Inhaltsverzeichnis: Dieses sollte wenn möglich nur eine Seite lang sein. Unterpunkte können dabei auch ausgelassen werden. Dies kann ganz einfach durchgeführt werden indem die section mit einen Stern geschrieben wird, wie bei der Sektion hier.
+\section{Motivation und Zielsetzung}\label{sec:motivation}
+Der glamouröseste aller Finanzmärkte ist der Aktienmarkt, der immer wieder Bilder von Aktienhändlern, die hektisch Aktien kaufen und verkaufen und Millionen verdienen, hervorruft. Gemäß einer Statistik von statista betrug das Volumen des weltweiten Aktienhandels 2020 etwa 185,7 Billionen Dollar \parencite{Statista.22.03.2022}. Leider zeichnet die Realität der Natur des Marktes ein weniger optimistisches Bild. Der Aktienmarkt ist im Wesentlichen ein nicht lineares, nicht parametrisches System, das extrem schwer mit vernünftiger Genauigkeit zu modellieren ist \parencite[vgl.][S. 13]{Wang.2003}. Deswegen fällt es sehr schwer, den Verlauf einer Aktie vorherzusagen. Wenn der Kurs einer Aktie jedoch für einen gewissen Zeitraum vorhergesagt werden könnte, würden sich die Verluste, die Menschen an der Börse hinnehmen müssen, erheblich reduzieren.
 
-Des Weiteren solltest du beachten, dass du keine Unterpunkte alleine aufmachen darfst. Laut den DHBW Leitlinien sollte, wenn es einen Punkt 1.1 gibt, auch ein Punkt 1.2 existieren. Weitere Details dazu in den Leitlinien - zur Info: diese Vorlage hält sich aktuell nicht an diese Regelung, sie ist schließlich nur ein Template.
 
-\section{Grobe Struktur der Arbeit}
-Alle Details zur Struktur findest du in den Leitlinien ab Seite 21. Nachfolgend ist nur die verkürze Version mit allen wichtigen Punkten angegeben.
+Ziel dieser Ausarbeitung ist deshalb das Erstellen eines Modells, welches den Aktienkurs eines amerikanischen Unternehmens für einen bestimmten Zeitraum voraussagt. Dafür wird unter Verwendung von mehreren Parametern, wie zum Beispiel der Eröffnungs- und Schlusskurs einer Aktie eines Tages, ein Modell mithilfe einer linearen Regression erstellt.
 
-\subsection{Einleitung - was gibt es zu beachten?}
-Die Einleitung sollte folgende Punkte beinhalten:
-\begin{itemize}
-\item \textbf{Gegenstand und Ziele der Arbeit \& Aufgabenbeschreibung, Einführung in Thema, Stand der Technik \& Forschung, Motivation der Aufgabenstellung \& Vorausblick}
-\item Ausgangspunkt der Arbeit umreisen
-\item Hinführung zur Problemstellung + Interesse des Lesers wecken
-\item Allgemeine Einleitung ins Thema (keine Unternehmens-, Produktbeschreibungen oder Organigramme!)
-\item Fragestellung präsentieren, Motivation erläutern
-\item Randbedingungen und Betrachtungsgrenzen aufzeigen
-\item Stand der Technik und aktuelle Lösungsfindung beschreiben, Vor- und Nachteile bisheriger Lösung anhand von Literatur darlegen
-\end{itemize}
-
-\subsection{Hauptteil - zeige was du kannst!}
-Folgende Punkte kannst du in deinen Hauptteil einarbeiten:
-\begin{itemize}
-\item \textbf{Anforderungsdefinition, Anforderungsanalyse, Lösungsgenerierung, Lösungsbewertung, Umsetzung) in sinnvollen Gliederungspunkten}
-\item Gewähltes Verfahren oder bestimmter Lösungsweg muss begründet werden
-\item Bei Versuchen (nicht alle müssen genannt werden) müssen Voraussetzungen, Vernachlässigungen sowie Anordnung, Leistungsfähigkeit und Messgenauigkeit der einzelnen Versuchsanordnung angeben werden
-\item Ergebnisse der Arbeit ausführlich diskutieren, Vergleiche mit Anschauungen und Erfahrungen vergleichen
-\item Ziel der Arbeit: Eindeutige Folgerungen und Richtlinien für die Praxis
-\end{itemize}
-
-\subsection{Schluss - das Ziel ist nahe...}
-Nachfolgende Aspekte können in den Schluss eingearbeitet werden:
-\begin{itemize}
-\item \textbf{Zusammenfassung und Ausblick}
-\item Aufgabenstellung, Vorgehensweise, sowie wesentliche Ergebnisse kurz/präzise darstellen
-\item Zusammenfassung eigenständig verständlich
-\item Länge ca. 1-1,5 Seiten (Problem, Ziele, Vorgehensweise, Ergebnisse und Ausblick)
-\end{itemize}
-
-\subsection{Sonstige Tipps}
-Es ist hilfreich, sich Notizen in das Dokument zu schreiben.
-\LaTeX Kommentare haben jedoch den Nachteil, dass sie in der PDF nicht erscheinen.
-Einfacher Text wird auch leicht überlesen.
-Deshalb wird in dieser Vorlage das Package ToDoNotes eingebunden, welches Notizen in dem Dokument sichtbar macht.\todo{So wie hier}
-Auf der rechten Seite siehst du ein Beispiel.
-
-Ein Glossareintrag kann mit dem Befehl \texttt{gls} erstellt werden. Ein Beispielglossareintrag \gls{Glossareintrag}.
+Die Gliederung dieser Arbeit wird sich an dem \ac{CRISP-DM} orientieren. Dieser stellt einen klassischen Ablauf in einem Data-Mining-Projekt dar und findet ebenfalls Verwendung im Bereich der KI. Im Allgemeinen wird dieser Prozess verwendet, um den Lebenszyklus von Daten innerhalb eines Data-Mining-Projekts zu modellieren und ein dafür vorgesehenes Data-Mining-Modell zu entwickeln. Unterteilt wird dieser Prozess in mehrere Phasen, welche das Geschäfts-, das Datenverständnis, die Datenvorbereitung, die Modellierung sowie die Evaluierung und gegebenenfalls das Deployment thematisieren \parencite[vgl.][S. 5ff.]{.Wirth}. 

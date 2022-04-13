@@ -1,0 +1,13 @@
+\chapter{Datenverständnis}\label{chp:datenverstaendnis}
+Bei dem verwendeten Datensatz handelt es sich um eine Sammlung von Unternehmen der \ac{NYSE}, von denen mehrere Kennzahlen des Aktienkurses und des Handelsvolumen gesammelt wurden. Innerhalb dieses Datensatzes wurden Informationen im Zeitraum vom 4. Januar 2010 bis zum 30. Dezember 2016 gesammelt. Dabei wurden nur die Wochentage Montag bis Freitag berücksichtigt, welche keine Feiertage waren. Folglich werden nur reguläre Handelstage an der Börse mit in die Berechnungen aufgenommen. Insgesamt wurden Daten von 501 Unternehmen gesammelt. Bei diesen Daten handelt es sich um folgende Variablen:
+
+\begin{itemize}
+    \item Das \textbf{Datum} verweist auf den Tag, an dem die Daten für ein bestimmtes Unternehmen gemessen wurden.
+    \item In dem Feld \textbf{Symbol} ist die Abkürzung des Unternehmens gespeichert. Beispielsweise wird für das Unternehmen Amazon die Abkürzung ``AMZN'' hinterlegt.
+    \item Der \textbf{Eröffnungskurs} gibt an, mit welchem Kurs die Aktien in den Handelstag gestartet ist.
+    \item In der Variable \textbf{Schlusskurs} wird gespeichert, mit welchem Kurs die Aktie den Handelstag beendet hat.
+    \item Das \textbf{Hoch} und \textbf{Tief} einer Aktien beschreiben den höchsten, beziehungsweise niedrigsten Kurs, den die Aktien an dem entsprechenden Tag verzeichnet hat.
+    \item Das \textbf{Volumen} verweist auf die Anzahl der Aktien eines Unternehmens, die an dem Handelstag gehandelt wurden.
+\end{itemize}
+
+Da sich der Zeitraum der gesammelten Daten nur auf 2010 bis 2016 erstreckt, können mit diesem Modell nur Aktienkurse vorhergesagt werden, welche sich auch in diesem Zeitintervall befinden. Um den aktuellen Aktienkurs einer Aktie durch das Modell vorherzusagen, müssten auch aktuelle Daten gesammelt werden. Jedoch werden in \cref{chp:evaluierung} die tatsächlichen Schlusskurse im selbigen Zeitraum mit den von dem Modell vorhergesagten Schlusskursen verglichen.

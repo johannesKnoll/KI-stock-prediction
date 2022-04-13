@@ -1,0 +1,15 @@
+\chapter{Modellierung}\label{chp:modellierung}
+Für das Trainieren des Modells wird eine lineare Regression verwendet. Diese wird ebenfalls von der Bibliothek scikit-learn zur Verfügung gestellt. Das Ziel einer linearen Regression ist es, eine erklärende, abhängige Variable Y durch eine oder mehrere unabhängige Variablen X zu erklären und zu zeigen, wie sich Y bei der Veränderung von X ändert \parencite[vgl.][S. 2]{.2010}. Eine lineare Regression lässt sich durch folgende Formel ausdrücken \parencite[vgl.][S. 1]{Montgomery.2021}:
+
+\begin{equation*}
+    y = \beta_0 + \beta_n \cdot x_n
+\end{equation*}
+
+Dabei handelt es sich bei $y$ um die abhängige Variable und bei $x_n$ um die beschreibenden, beziehungsweise die unabhängigen Variablen.
+
+Übertragen auf das Problemfeld der Vorhersage von Aktienkursen entspricht der Schlusskurs einer Aktie an einem Tag also der abhängigen Variable. Diese hängt über eine Funktion von den Eingangsgrößen, also den unabhängigen oder auch erklärenden Variablen, ab. Zu den erklärenden Variablen gehören der Schluss- und Eröffnungskurs, das Tageshoch und -tief sowie das Handelsvolumen einer Aktie für einen Handelstag.
+
+
+Mit der Methode \textit{fit}\footnote{https://scikit-learn.org/stable/modules/generated/sklearn.linear\_model.LinearRegression.html} werden dem Modell die x- und y-Werte der Trainingsdaten übergeben. Die x-Daten entsprechen dabei den standardisierten Variablen, mit denen der Aktienkurs vorhergesagt werden soll. Diese sind unter anderem der Eröffnungskurs, das Handelsvolumen oder das Tageshoch. In den y-Werten ist jeweils hinterlegt, mit welchem Kurs die jeweilige Aktie an diesem Tag geschlossen hat. Mit diesen Informationen wird das Modell nun trainiert, damit es für nicht bekannte Eingangsvariablen einen Aktienkurs vorhersagen kann.
+
+Nun können mit der Methode \textit{predict} die Schlusskurse der zu Beginn ausgesuchten Aktie vorhergesagt werden. Dafür wird der Methode der kleine Datensatz übergeben, der die 18 Zeilen enthält, dessen Schlusskurse vorhergesagt werden sollen. Als Ergebnis wird eine Liste zurückgegeben, welche die vorhergesagten Schlusskurse enthält. 
